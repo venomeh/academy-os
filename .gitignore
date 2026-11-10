@@ -1,0 +1,47 @@
+# OS & Editor
+.DS_Store
+**/.DS_Store
+.claude/
+.cursor/
+.mcp.json
+
+# Environment & Secrets (never commit real .env files; keep .env.example)
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# Dependencies & Build Artifacts
+node_modules/
+**/node_modules/
+.next/
+**/.next/
+out/
+**/out/
+.vercel/
+**/.vercel/
+*.tsbuildinfo
+
+# Supabase CLI & Temp Deploy Directories
+supabase/.temp/
+**/supabase/.temp/
+**/supabase/.branches/
+academyOS-BubbleServer/.tmp-deploy/
+
+# Root CLI scratch files & internal roadmaps
+/package.json
+/package-lock.json
+/deno.lock
+/supabase/
+academy-os-roadmap.md
+Tasks.md
+**/Tasks.md
+
+# Raw Design Canvas exports (kept locally only)
+*.dc.html
+**/*.dc.html
+academyOS-Coded/support.js
+academyOS-Coded/AcademyOS landing page mockup/
+*.zip

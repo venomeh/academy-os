@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Academy OS — login reference</title>
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --black: #000000;
+        --ink: #1a1a1a;
+        --muted: #525252;
+        --line: #e6e6e6;
+        --placeholder: #c7c7c7;
+        --orange: #ff4e18;
+        --white: #ffffff;
+        --rail: 260px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+        font-family: Satoshi, ui-sans-serif, system-ui, sans-serif;
+        color: var(--ink);
+        background: #f3f3f3;
+      }
+
+      .page {
+        min-height: 100vh;
+        display: flex;
+        background: var(--white);
+      }
+
+      .rail {
+        width: var(--rail);
+        flex: 0 0 var(--rail);
+        background: var(--black);
+        color: var(--white);
+        padding: 32px 28px;
+      }
+
+      .wordmark {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        line-height: 1.1;
+      }
+
+      .accent {
+        width: 40px;
+        height: 2px;
+        background: var(--orange);
+        margin: 12px 0 16px;
+        border: 0;
+      }
+
+      .tagline {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.45;
+        color: rgba(255, 255, 255, 0.55);
+        font-weight: 400;
+        max-width: 180px;
+      }
+
+      .pane {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 48px 24px;
+        background: var(--white);
+      }
+
+      .form {
+        width: 100%;
+        max-width: 360px;
+      }
+
+      .title {
+        margin: 0 0 28px;
+        font-size: 32px;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+      }
+
+      label {
+        display: block;
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--muted);
+        margin: 0 0 8px;
+      }
+
+      .field {
+        margin: 0 0 20px;
+      }
+
+      input {
+        width: 100%;
+        height: 48px;
+        padding: 0 14px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--white);
+        color: var(--ink);
+        font: 400 15px/1 Satoshi, ui-sans-serif, system-ui, sans-serif;
+      }
+
+      input::placeholder {
+        color: var(--placeholder);
+      }
+
+      input:focus {
+        outline: 2px solid var(--ink);
+        outline-offset: 1px;
+      }
+
+      .primary {
+        display: block;
+        width: 100%;
+        height: 44px;
+        margin-top: 4px;
+        border: 0;
+        border-radius: 8px;
+        background: var(--black);
+        color: var(--white);
+        font: 700 14px/1 Satoshi, ui-sans-serif, system-ui, sans-serif;
+        cursor: pointer;
+      }
+
+      .forgot {
+        display: block;
+        width: 100%;
+        margin-top: 16px;
+        border: 0;
+        background: transparent;
+        color: var(--muted);
+        font: 500 13px/1 Satoshi, ui-sans-serif, system-ui, sans-serif;
+        text-align: center;
+        cursor: pointer;
+      }
+
+      .mobile-brand {
+        display: none;
+        margin-bottom: 28px;
+      }
+
+      .mobile-brand .wordmark {
+        color: var(--ink);
+      }
+
+      .notes {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        max-width: 280px;
+        padding: 12px 14px;
+        background: #111;
+        color: #fff;
+        font-size: 12px;
+        line-height: 1.4;
+        border-radius: 8px;
+        z-index: 4;
+      }
+
+      .notes strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      dialog {
+        width: min(400px, calc(100vw - 32px));
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 24px;
+        background: var(--white);
+      }
+
+      dialog::backdrop {
+        background: rgba(0, 0, 0, 0.4);
+      }
+
+      dialog h2 {
+        margin: 0 0 8px;
+        font-size: 20px;
+        font-weight: 900;
+      }
+
+      dialog p {
+        margin: 0 0 20px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      @media (max-width: 799px) {
+        .rail {
+          display: none;
+        }
+
+        .mobile-brand {
+          display: block;
+        }
+
+        .page {
+          min-height: 100vh;
+        }
+
+        .pane {
+          align-items: flex-start;
+          padding-top: 32px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <aside class="rail" aria-label="Brand">
+        <p class="wordmark">Academy OS</p>
+        <hr class="accent" />
+        <p class="tagline">Fees, attendance, remarks — one place.</p>
+      </aside>
+
+      <main class="pane">
+        <form class="form" action="#" onsubmit="return false">
+          <div class="mobile-brand">
+            <p class="wordmark">Academy OS</p>
+            <hr class="accent" />
+          </div>
+
+          <h1 class="title">Sign in</h1>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" autocomplete="username" placeholder="you@school.com" />
+          </div>
+
+          <div class="field">
+            <label for="password">Password</label>
+            <input id="password" type="password" autocomplete="current-password" placeholder="Password" />
+          </div>
+
+          <button class="primary" type="submit">Log in</button>
+          <button class="forgot" type="button" onclick="document.getElementById('reset').showModal()">
+            Forgot password
+          </button>
+        </form>
+      </main>
+    </div>
+
+    <dialog id="reset">
+      <h2>Reset password</h2>
+      <p>We’ll email a reset link.</p>
+      <div class="field">
+        <label for="reset-email">Email</label>
+        <input id="reset-email" type="email" placeholder="you@school.com" />
+      </div>
+      <button class="primary" type="button" onclick="document.getElementById('reset').close()">
+        Send link
+      </button>
+    </dialog>
+
+    <aside class="notes">
+      <strong>Reference only — not the Bubble page</strong>
+      Desktop: black rail 260px + white form. Narrower than 800px: hide rail, show wordmark above Sign in. Log in is the only black pill. Forgot is text.
+    </aside>
+  </body>
+</html>

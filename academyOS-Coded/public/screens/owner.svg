@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" font-family="Helvetica, Arial, sans-serif">
+  <rect width="800" height="600" fill="#0d0d0d"/>
+  <rect width="800" height="46" fill="#1a1a1a"/>
+  <circle cx="26" cy="23" r="5" fill="#ff4e18"/><circle cx="44" cy="23" r="5" fill="#3a3a38"/><circle cx="62" cy="23" r="5" fill="#3a3a38"/>
+  <text x="92" y="28" fill="#8a8a84" font-size="12" letter-spacing="1.6">ACADEMYOS — OWNER DASHBOARD</text>
+  <text x="700" y="28" fill="#8a8a84" font-size="12" letter-spacing="1.6">MARCH 2026</text>
+
+  <rect x="32" y="78" width="356" height="164" rx="16" fill="#1a1a1a" stroke="#2c2c2a"/>
+  <text x="56" y="112" fill="#8a8a84" font-size="11" letter-spacing="2">TODAY’S COLLECTIONS</text>
+  <text x="56" y="172" fill="#ff4e18" font-size="52" font-weight="bold" letter-spacing="-2">Rs 46,200</text>
+  <text x="56" y="206" fill="#8a8a84" font-size="14">9 online · 3 cash at the desk</text>
+
+  <rect x="412" y="78" width="356" height="164" rx="16" fill="#1a1a1a" stroke="#2c2c2a"/>
+  <text x="436" y="112" fill="#8a8a84" font-size="11" letter-spacing="2">OUTSTANDING</text>
+  <text x="436" y="172" fill="#f7f5f0" font-size="52" font-weight="bold" letter-spacing="-2">Rs 312,400</text>
+  <text x="436" y="206" fill="#8a8a84" font-size="14">38 families · 4 paused</text>
+
+  <text x="32" y="290" fill="#8a8a84" font-size="11" letter-spacing="2">DEFAULTERS — AGING BUCKETS</text>
+  <line x1="32" y1="308" x2="768" y2="308" stroke="#2c2c2a"/>
+
+  <g font-size="15" fill="#f7f5f0">
+    <text x="32" y="342">Khan family</text><text x="470" y="342" fill="#f7f5f0" text-anchor="end">Rs 8,750</text>
+    <rect x="600" y="326" width="76" height="24" rx="12" fill="#ff4e18"/><text x="638" y="342" fill="#0d0d0d" font-size="11" font-weight="bold" text-anchor="middle">30+ DAYS</text>
+    <line x1="32" y1="362" x2="768" y2="362" stroke="#2c2c2a"/>
+
+    <text x="32" y="396">Siddiqui family</text><text x="470" y="396" text-anchor="end">Rs 13,200</text>
+    <rect x="600" y="380" width="76" height="24" rx="12" fill="#3a3a38"/><text x="638" y="396" fill="#f7f5f0" font-size="11" font-weight="bold" text-anchor="middle">14+ DAYS</text>
+    <line x1="32" y1="416" x2="768" y2="416" stroke="#2c2c2a"/>
+
+    <text x="32" y="450">Raza family</text><text x="470" y="450" text-anchor="end">Rs 4,700</text>
+    <rect x="600" y="434" width="76" height="24" rx="12" fill="#3a3a38"/><text x="638" y="450" fill="#f7f5f0" font-size="11" font-weight="bold" text-anchor="middle">7+ DAYS</text>
+    <line x1="32" y1="470" x2="768" y2="470" stroke="#2c2c2a"/>
+
+    <text x="32" y="504">Malik family</text><text x="470" y="504" text-anchor="end">Rs 9,000</text>
+    <rect x="600" y="488" width="76" height="24" rx="12" fill="#3a3a38"/><text x="638" y="504" fill="#f7f5f0" font-size="11" font-weight="bold" text-anchor="middle">CURRENT</text>
+    <line x1="32" y1="524" x2="768" y2="524" stroke="#2c2c2a"/>
+  </g>
+  <text x="32" y="562" fill="#8a8a84" font-size="12">Placeholder screen — replace with a real capture after the backend lands.</text>
+</svg>

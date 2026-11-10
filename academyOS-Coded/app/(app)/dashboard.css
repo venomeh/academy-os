@@ -1,0 +1,167 @@
+/**
+ * Product-surface stylesheet — Admin/Teacher/Parent dashboards, Login, and
+ * Payment Success. Deliberately a distinct palette from the marketing site
+ * (app/globals.css): the landing page is a "look at this" surface, these
+ * are a "use this every day" surface, and real products commonly separate
+ * the two design systems. Scoped under .app-root so it never leaks onto
+ * the marketing routes, which share the same root layout.
+ *
+ * Keyframe names are prefixed dash* to avoid colliding with globals.css's
+ * identically-named animations (fadeIn, riseUp, etc.) — both stylesheets
+ * are global or module?? actually both are plain global CSS loaded by the
+ * root layout tree, so unprefixed names would silently clobber each other.
+ */
+
+.app-root {
+  --ink: #0d0d0d;
+  --ink-2: #1c1b19;
+  --ink-3: #262421;
+  --paper: #f7f6f3;
+  --paper-soft: #faf9f6;
+  --line: #e8e5de;
+  --line-soft: #f1efe9;
+  --line-dark: #262421;
+  --border: #ddd9d0;
+  --muted: #6b6660;
+  --muted-2: #8a857c;
+  --muted-3: #a8a39a;
+  --ink-text: #2a2723;
+  --ink-text-2: #4a463f;
+  --bright: #ff4e18;
+  --good: #0b7a4b;
+  --good-bg: #f1f7f3;
+  --good-bd: #d3e7dc;
+  --warn: #8a5b0b;
+  --warn-bg: #fff6e8;
+  --warn-bd: #f2e1c4;
+  --bad: #b4231f;
+  --bad-bg: #fdecec;
+  --bad-bd: #f6cfcc;
+  --dark-muted: #9b958c;
+  --dark-line: #302e2a;
+
+  min-height: 100svh;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Satoshi", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app-root * {
+  box-sizing: border-box;
+}
+
+.app-root a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.app-root button,
+.app-root input,
+.app-root select,
+.app-root textarea {
+  font: inherit;
+  color: inherit;
+}
+
+.app-root input::placeholder,
+.app-root textarea::placeholder {
+  color: var(--muted-3);
+  opacity: 1;
+}
+
+.app-root :focus-visible {
+  outline: 2px solid var(--bright);
+  outline-offset: 2px;
+}
+
+.app-root ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.app-root ::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 9999px;
+  border: 3px solid var(--paper);
+}
+
+@keyframes dashFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes dashRiseIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes dashPopIn {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes dashSlideOver {
+  from { transform: translateX(24px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes dashToastIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes dashSpin {
+  to { transform: rotate(360deg); }
+}
+@keyframes dashPulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.8); }
+}
+@keyframes dashGrowBar {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+@keyframes dashMaskUp {
+  from { transform: translateY(110%); }
+  to { transform: translateY(0); }
+}
+@keyframes dashRingIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+@keyframes dashDrawTick {
+  from { stroke-dashoffset: 42; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes dashHaloOut {
+  0% { transform: scale(0.8); opacity: 0.5; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+@keyframes dashShake {
+  10%, 90% { transform: translateX(-1px); }
+  30%, 70% { transform: translateX(2px); }
+  50% { transform: translateX(-3px); }
+}
+@keyframes dashDrift {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-14px, -22px); }
+  100% { transform: translate(0, 0); }
+}
+@keyframes dashSheetUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+@keyframes dashBlink {
+  0%, 60%, 100% { opacity: 0.25; }
+  30% { opacity: 1; }
+}
+@keyframes dashTick {
+  from { transform: scale(0.6); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-root *,
+  .app-root *::before,
+  .app-root *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

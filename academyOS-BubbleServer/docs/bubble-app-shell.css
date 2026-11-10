@@ -1,0 +1,78 @@
+/* ============================================================
+   AcademyOS — full-viewport app shell
+   Paste into: Settings → SEO & metatags → "Script/meta tags in header"
+   wrapped in <style> ... </style>
+
+   Requires these ID Attributes (Layout tab → ID Attribute):
+     G: Main Admin Dashboard  →  app-shell
+     G: sidebar               →  app-sidebar
+     G: main section          →  app-content
+     g: content               →  app-content-inner
+
+   !important is required: Bubble writes min/max height as INLINE styles,
+   and only an !important author rule outranks an inline declaration.
+   ============================================================ */
+
+/* 1. Anchor the shell to the viewport.
+      Without this, every "100%" height below it resolves against a
+      parent of indefinite height and computes to nothing. */
+#app-shell {
+  height: 100vh !important;   /* fallback for older browsers */
+  height: 100dvh !important;  /* dvh excludes mobile browser chrome */
+  max-height: 100dvh !important;
+  overflow: hidden !important; /* the page never scrolls; the panes do */
+}
+
+/* 2. Both panes fill the shell and become their own scroll containers. */
+#app-sidebar,
+#app-content {
+  align-self: stretch !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  min-height: 0 !important;    /* lets a flex item shrink below content size */
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+#app-content {
+  scrollbar-gutter: stable;    /* no layout jump when switching tabs */
+}
+
+/* 3. The inner wrapper must hug its content, or there is nothing to scroll. */
+#app-content-inner {
+  flex: 0 0 auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+}
+
+/* 4. Scrollbars that match the design rather than the OS default. */
+#app-sidebar,
+#app-content {
+  scrollbar-width: thin;
+}
+#app-sidebar::-webkit-scrollbar,
+#app-content::-webkit-scrollbar {
+  width: 10px;
+}
+#app-sidebar::-webkit-scrollbar-track,
+#app-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+#app-content::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.18);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  border-radius: 99px;
+}
+#app-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.22);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  border-radius: 99px;
+}
+#app-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}

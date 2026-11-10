@@ -1,0 +1,17 @@
+node_modules/
+.next/
+out/
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts
+.vercel
+package-lock.json
+
+.env
+.env.*
+!.env.example
+
+*.dc.html
+support.js
+AcademyOS landing page mockup/
+Tasks.md
